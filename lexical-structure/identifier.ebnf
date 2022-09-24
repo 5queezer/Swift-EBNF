@@ -1,29 +1,29 @@
 (* Grammar of an identifier *)
 
-identifier = identifier_head [ identifier_characters ] ;
-identifier = "`" identifier_head [ identifier_characters ] "`" ;
-identifier = implicit_parameter_name ;
-identifier = property_wrapper_projection ;
+identifier = identifier_head [ identifier_characters ]
+           | "`" identifier_head [ identifier_characters ] "`"
+           | implicit_parameter_name
+           | property_wrapper_projection ;
 identifier_list = identifier | identifier "," identifier_list ;
-identifier_head = /[a-z]/ | /[A-Z]/ ;
-identifier_head = "_" ;
-identifier_head = /\U000000A8/ | /\U000000AA/ | /\U000000AD/ | /\U000000AF/ | /[\U000000B2-\U000000B5]/ | /[\U000000B7-\U000000BA]/ ;
-identifier_head = /[\U000000BC-\U000000BE]/ | /[\U000000C0-\U000000D6]/ | /[\U000000D8-\U000000F6]/ | /[\U000000F8-\U000000FF]/ ;
-identifier_head = /[\U00000100-\U000002FF]/ | /[\U00000370-\U0000167F]/ | /[\U00001681-\U0000180D]/ | /[\U0000180F-\U00001DBF]/ ;
-identifier_head = /[\U00001E00-\U00001FFF]/ ;
-identifier_head = /[\U0000200B-\U0000200D]/ | /[\U0000202A-\U0000202E]/ | /[\U0000203F-\U00002040]/ | /\U00002054/ | /[\U00002060-\U0000206F]/ ;
-identifier_head = /[\U00002070-\U000020CF]/ | /[\U00002100-\U0000218F]/ | /[\U00002460-\U000024FF]/ | /[\U00002776-\U00002793]/ ;
-identifier_head = /[\U00002C00-\U00002DFF]/ | /[\U00002E80-\U00002FFF]/ ;
-identifier_head = /[\U00003004-\U00003007]/ | /[\U00003021-\U0000302F]/ | /[\U00003031-\U0000303F]/ | /[\U00003040-\U0000D7FF]/ ;
-identifier_head = /[\U0000F900-\U0000FD3D]/ | /[\U0000FD40-\U0000FDCF]/ | /[\U0000FDF0-\U0000FE1F]/ | /[\U0000FE30-\U0000FE44]/ ;
-identifier_head = /[\U0000FE47-\U0000FFFD]/ ;
-identifier_head = /[\U00010000-\U0001FFFD]/ | /[\U00020000-\U0002FFFD]/ | /[\U00030000-\U0003FFFD]/ | /[\U00040000-\U0004FFFD]/ ;
-identifier_head = /[\U00050000-\U0005FFFD]/ | /[\U00060000-\U0006FFFD]/ | /[\U00070000-\U0007FFFD]/ | /[\U00080000-\U0008FFFD]/ ;
-identifier_head = /[\U00090000-\U0009FFFD]/ | /[\U000A0000-\U000AFFFD]/ | /[\U000B0000-\U000BFFFD]/ | /[\U000C0000-\U000CFFFD]/ ;
-identifier_head = /[\U000D0000-\U000DFFFD]/ | /[\U000E0000-\U000EFFFD]/ ;
-identifier_character = /[0-9]/ ;
-identifier_character = /[\U00000300-\U0000036F]/ | /[\U00001DC0-\U00001DFF]/ | /[\U000020D0-\U000020FF]/ | /[\U0000FE20-\U0000FE2F]/ ;
-identifier_character = identifier_head ;
+identifier_head = /[a-z]/ | /[A-Z]/
+                | "_"
+                | /\U000000A8/ | /\U000000AA/ | /\U000000AD/ | /\U000000AF/ | /[\U000000B2-\U000000B5]/ | /[\U000000B7-\U000000BA]/
+                | /[\U000000BC-\U000000BE]/ | /[\U000000C0-\U000000D6]/ | /[\U000000D8-\U000000F6]/ | /[\U000000F8-\U000000FF]/
+                | /[\U00000100-\U000002FF]/ | /[\U00000370-\U0000167F]/ | /[\U00001681-\U0000180D]/ | /[\U0000180F-\U00001DBF]/
+                | /[\U00001E00-\U00001FFF]/
+                | /[\U0000200B-\U0000200D]/ | /[\U0000202A-\U0000202E]/ | /[\U0000203F-\U00002040]/ | /\U00002054/ | /[\U00002060-\U0000206F]/
+                | /[\U00002070-\U000020CF]/ | /[\U00002100-\U0000218F]/ | /[\U00002460-\U000024FF]/ | /[\U00002776-\U00002793]/
+                | /[\U00002C00-\U00002DFF]/ | /[\U00002E80-\U00002FFF]/
+                | /[\U00003004-\U00003007]/ | /[\U00003021-\U0000302F]/ | /[\U00003031-\U0000303F]/ | /[\U00003040-\U0000D7FF]/
+                | /[\U0000F900-\U0000FD3D]/ | /[\U0000FD40-\U0000FDCF]/ | /[\U0000FDF0-\U0000FE1F]/ | /[\U0000FE30-\U0000FE44]/
+                | /[\U0000FE47-\U0000FFFD]/
+                | /[\U00010000-\U0001FFFD]/ | /[\U00020000-\U0002FFFD]/ | /[\U00030000-\U0003FFFD]/ | /[\U00040000-\U0004FFFD]/
+                | /[\U00050000-\U0005FFFD]/ | /[\U00060000-\U0006FFFD]/ | /[\U00070000-\U0007FFFD]/ | /[\U00080000-\U0008FFFD]/
+                | /[\U00090000-\U0009FFFD]/ | /[\U000A0000-\U000AFFFD]/ | /[\U000B0000-\U000BFFFD]/ | /[\U000C0000-\U000CFFFD]/
+                | /[\U000D0000-\U000DFFFD]/ | /[\U000E0000-\U000EFFFD]/ ;
+identifier_character = /[0-9]/
+                     | /[\U00000300-\U0000036F]/ | /[\U00001DC0-\U00001DFF]/ | /[\U000020D0-\U000020FF]/ | /[\U0000FE20-\U0000FE2F]/
+                     | identifier_head ;
 identifier_characters = identifier_character [ identifier_characters ] ;
 implicit_parameter_name = "$" decimal_digits ;
 property_wrapper_projection = "$" identifier_characters ;

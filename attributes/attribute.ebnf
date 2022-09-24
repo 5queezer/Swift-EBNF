@@ -5,8 +5,8 @@ attribute_name = identifier ;
 attribute_argument_clause = "(" [ balanced_tokens ] ")" ;
 attributes = attribute [ attributes ] ;
 balanced_tokens = balanced_token [ balanced_tokens ] ;
-balanced_token = "(" [ balanced_tokens ] ")" ;
-balanced_token = "[" [ balanced_tokens ] "]" ;
-balanced_token = "{" [ balanced_tokens ] "}" ;
-balanced_token = identifier | keyword | literal | operator ;
-balanced_token = <Any punctuation except> "(" , ")" , "[" , "]" , "{" , "}" ;
+balanced_token = "(" [ balanced_tokens ] ")"
+               | "[" [ balanced_tokens ] "]"
+               | "{" [ balanced_tokens ] "}"
+               | identifier | keyword | literal | operator
+               | "!" | '"' | "#" | "$" | "%" | "&" | "'" | "*" | "+" | "," | "-" | "." | "/" | ":" | ";" | "<" | "=" | ">" | "?" | "@" | "\" | "^" | "_" | "`" | "|" | "~" ;

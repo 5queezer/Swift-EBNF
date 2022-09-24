@@ -1,5 +1,5 @@
 (* Grammar of a selector expression *)
 
-selector_expression = "#selector" "(" expression ")" ;
-selector_expression = "#selector" "(" "getter:" expression ")" ;
-selector_expression = "#selector" "(" "setter:" expression ")" ;
+selector_expression = "#selector" "(" expression ")"
+                    | "#selector" "(" "getter:" expression ")"
+                    | "#selector" "(" "setter:" expression ")" ;

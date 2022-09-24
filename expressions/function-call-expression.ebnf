@@ -1,11 +1,11 @@
 (* Grammar of a function call expression *)
 
-function_call_expression = postfix_expression function_call_argument_clause ;
-function_call_expression = postfix_expression [ function_call_argument_clause ] trailing_closures ;
+function_call_expression = postfix_expression function_call_argument_clause
+                         | postfix_expression [ function_call_argument_clause ] trailing_closures ;
 function_call_argument_clause = "(" ")" | "(" function_call_argument_list ")" ;
 function_call_argument_list = function_call_argument | function_call_argument "," function_call_argument_list ;
-function_call_argument = expression | identifier ":" expression ;
-function_call_argument = operator | identifier ":" operator ;
+function_call_argument = expression | identifier ":" expression
+                       | operator | identifier ":" operator ;
 trailing_closures = closure_expression [ labeled_trailing_closures ] ;
 labeled_trailing_closures = labeled_trailing_closure [ labeled_trailing_closures ] ;
 labeled_trailing_closure = identifier ":" closure_expression ;

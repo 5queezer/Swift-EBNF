@@ -1,7 +1,7 @@
 (* Grammar of an infix expression *)
 
-infix_expression = infix_operator prefix_expression ;
-infix_expression = assignment_operator [ try_operator ] prefix_expression ;
-infix_expression = conditional_operator [ try_operator ] prefix_expression ;
-infix_expression = type_casting_operator ;
+infix_expression = infix_operator prefix_expression
+                 | assignment_operator [ try_operator ] prefix_expression
+                 | conditional_operator [ try_operator ] prefix_expression
+                 | type_casting_operator ;
 infix_expressions = infix_expression [ infix_expressions ] ;

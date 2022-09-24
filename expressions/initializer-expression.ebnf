@@ -1,4 +1,4 @@
 (* Grammar of an initializer expression *)
 
-initializer_expression = postfix_expression "." "init" ;
-initializer_expression = postfix_expression "." "init" "(" argument_names ")" ;
+initializer_expression = postfix_expression "." "init"
+                       | postfix_expression "." "init" "(" argument_names ")" ;

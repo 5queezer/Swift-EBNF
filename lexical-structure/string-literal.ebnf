@@ -3,26 +3,26 @@
 string_literal = static_string_literal | interpolated_string_literal ;
 string_literal_opening_delimiter = [ extended_string_literal_delimiter ] '"' ;
 string_literal_closing_delimiter = '"' [ extended_string_literal_delimiter ] ;
-static_string_literal = string_literal_opening_delimiter [ quoted_text ] string_literal_closing_delimiter ;
-static_string_literal = multiline_string_literal_opening_delimiter [ multiline_quoted_text ] multiline_string_literal_closing_delimiter ;
+static_string_literal = string_literal_opening_delimiter [ quoted_text ] string_literal_closing_delimiter
+                      | multiline_string_literal_opening_delimiter [ multiline_quoted_text ] multiline_string_literal_closing_delimiter ;
 multiline_string_literal_opening_delimiter = [ extended_string_literal_delimiter ] '"""' ;
 multiline_string_literal_closing_delimiter = '"""' [ extended_string_literal_delimiter ] ;
 extended_string_literal_delimiter = "#" [ extended_string_literal_delimiter ] ;
 quoted_text = quoted_text_item [ quoted_text ] ;
-quoted_text_item = escaped_character ;
-quoted_text_item = <Any Unicode scalar value except> '"' , "\" , ;
+quoted_text_item = escaped_character
+                 | unicode_scalar_value ~ ( '"' | "\" | /\U0000000A/ | /\U0000000D/ ) ;
 multiline_quoted_text = multiline_quoted_text_item [ multiline_quoted_text ] ;
-multiline_quoted_text_item = escaped_character ;
-multiline_quoted_text_item = <Any Unicode scalar value except> "\" ;
-multiline_quoted_text_item = escaped_newline ;
-interpolated_string_literal = string_literal_opening_delimiter [ interpolated_text ] string_literal_closing_delimiter ;
-interpolated_string_literal = multiline_string_literal_opening_delimiter [ multiline_interpolated_text ] multiline_string_literal_closing_delimiter ;
+multiline_quoted_text_item = escaped_character
+                           | unicode_scalar_value ~ "\"
+                           | escaped_newline ;
+interpolated_string_literal = string_literal_opening_delimiter [ interpolated_text ] string_literal_closing_delimiter
+                            | multiline_string_literal_opening_delimiter [ multiline_interpolated_text ] multiline_string_literal_closing_delimiter ;
 interpolated_text = interpolated_text_item [ interpolated_text ] ;
 interpolated_text_item = "\(" expression ")" | quoted_text_item ;
 multiline_interpolated_text = multiline_interpolated_text_item [ multiline_interpolated_text ] ;
 multiline_interpolated_text_item = "\(" expression ")" | multiline_quoted_text_item ;
 escape_sequence = "\" extended_string_literal_delimiter ;
-escaped_character = escape_sequence "0" | escape_sequence "\" | escape_sequence "t" | escape_sequence "n" | escape_sequence "r" | escape_sequence '"' | escape_sequence "'" ;
-escaped_character = escape_sequence "u" "{" unicode_scalar_digits "}" ;
+escaped_character = escape_sequence "0" | escape_sequence "\" | escape_sequence "t" | escape_sequence "n" | escape_sequence "r" | escape_sequence '"' | escape_sequence "'"
+                  | escape_sequence "u" "{" unicode_scalar_digits "}" ;
 unicode_scalar_digits = /[0-9a-fA-F]{1,8}/ ;
 escaped_newline = escape_sequence [ inline_spaces ] line_break ;

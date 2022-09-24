@@ -1,19 +1,19 @@
 (* Grammar of a declaration *)
 
-declaration = import_declaration ;
-declaration = constant_declaration ;
-declaration = variable_declaration ;
-declaration = typealias_declaration ;
-declaration = function_declaration ;
-declaration = enum_declaration ;
-declaration = struct_declaration ;
-declaration = class_declaration ;
-declaration = actor_declaration ;
-declaration = protocol_declaration ;
-declaration = initializer_declaration ;
-declaration = deinitializer_declaration ;
-declaration = extension_declaration ;
-declaration = subscript_declaration ;
-declaration = operator_declaration ;
-declaration = precedence_group_declaration ;
+declaration = import_declaration
+            | constant_declaration
+            | variable_declaration
+            | typealias_declaration
+            | function_declaration
+            | enum_declaration
+            | struct_declaration
+            | class_declaration
+            | actor_declaration
+            | protocol_declaration
+            | initializer_declaration
+            | deinitializer_declaration
+            | extension_declaration
+            | subscript_declaration
+            | operator_declaration
+            | precedence_group_declaration ;
 declarations = declaration [ declarations ] ;

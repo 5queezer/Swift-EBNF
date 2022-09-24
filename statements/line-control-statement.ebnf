@@ -1,6 +1,6 @@
 (* Grammar of a line control statement *)
 
-line_control_statement = "#sourceLocation" "(" "file:" file_path "," "line:" line_number ")" ;
-line_control_statement = "#sourceLocation" "(" ")" ;
+line_control_statement = "#sourceLocation" "(" "file:" file_path "," "line:" line_number ")"
+                       | "#sourceLocation" "(" ")" ;
 line_number = /[1-9][0-9]*/ ;
 file_path = static_string_literal ;

@@ -1,7 +1,7 @@
 (* Grammar of a class declaration *)
 
-class_declaration = [ attributes ] [ access_level_modifier ] [ "final" ] "class" class_name [ generic_parameter_clause ] [ type_inheritance_clause ] [ generic_where_clause ] class_body ;
-class_declaration = [ attributes ] "final" [ access_level_modifier ] "class" class_name [ generic_parameter_clause ] [ type_inheritance_clause ] [ generic_where_clause ] class_body ;
+class_declaration = [ attributes ] [ access_level_modifier ] [ "final" ] "class" class_name [ generic_parameter_clause ] [ type_inheritance_clause ] [ generic_where_clause ] class_body
+                  | [ attributes ] "final" [ access_level_modifier ] "class" class_name [ generic_parameter_clause ] [ type_inheritance_clause ] [ generic_where_clause ] class_body ;
 class_name = identifier ;
 class_body = "{" [ class_members ] "}" ;
 class_members = class_member [ class_members ] ;

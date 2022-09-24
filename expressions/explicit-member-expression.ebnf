@@ -1,8 +1,8 @@
 (* Grammar of an explicit member expression *)
 
-explicit_member_expression = postfix_expression "." decimal_digits ;
-explicit_member_expression = postfix_expression "." identifier [ generic_argument_clause ] ;
-explicit_member_expression = postfix_expression "." identifier "(" argument_names ")" ;
-explicit_member_expression = postfix_expression conditional_compilation_block ;
+explicit_member_expression = postfix_expression "." decimal_digits
+                           | postfix_expression "." identifier [ generic_argument_clause ]
+                           | postfix_expression "." identifier "(" argument_names ")"
+                           | postfix_expression conditional_compilation_block ;
 argument_names = argument_name [ argument_names ] ;
 argument_name = identifier ":" ;

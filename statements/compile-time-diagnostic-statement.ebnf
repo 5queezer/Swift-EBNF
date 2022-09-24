@@ -1,5 +1,5 @@
 (* Grammar of a compile-time diagnostic statement *)
 
-diagnostic_statement = "#error" "(" diagnostic_message ")" ;
-diagnostic_statement = "#warning" "(" diagnostic_message ")" ;
+diagnostic_statement = "#error" "(" diagnostic_message ")"
+                     | "#warning" "(" diagnostic_message ")" ;
 diagnostic_message = static_string_literal ;

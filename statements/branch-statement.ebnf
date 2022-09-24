@@ -1,5 +1,5 @@
 (* Grammar of a branch statement *)
 
-branch_statement = if_statement ;
-branch_statement = guard_statement ;
-branch_statement = switch_statement ;
+branch_statement = if_statement
+                 | guard_statement
+                 | switch_statement ;

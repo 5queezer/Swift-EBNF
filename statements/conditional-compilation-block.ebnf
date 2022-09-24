@@ -9,19 +9,19 @@ if_directive = "#if" ;
 elseif_directive = "#elseif" ;
 else_directive = "#else" ;
 endif_directive = "#endif" ;
-compilation_condition = platform_condition ;
-compilation_condition = identifier ;
-compilation_condition = boolean_literal ;
-compilation_condition = "(" compilation_condition ")" ;
-compilation_condition = "!" compilation_condition ;
-compilation_condition = compilation_condition "&&" compilation_condition ;
-compilation_condition = compilation_condition "||" compilation_condition ;
-platform_condition = "os" "(" operating_system ")" ;
-platform_condition = "arch" "(" architecture ")" ;
-platform_condition = "swift" "(" ">=" swift_version ")" | "swift" "(" "<" swift_version ")" ;
-platform_condition = "compiler" "(" ">=" swift_version ")" | "compiler" "(" "<" swift_version ")" ;
-platform_condition = "canImport" "(" import_path ")" ;
-platform_condition = "targetEnvironment" "(" environment ")" ;
+compilation_condition = platform_condition
+                      | identifier
+                      | boolean_literal
+                      | "(" compilation_condition ")"
+                      | "!" compilation_condition
+                      | compilation_condition "&&" compilation_condition
+                      | compilation_condition "||" compilation_condition ;
+platform_condition = "os" "(" operating_system ")"
+                   | "arch" "(" architecture ")"
+                   | "swift" "(" ">=" swift_version ")" | "swift" "(" "<" swift_version ")"
+                   | "compiler" "(" ">=" swift_version ")" | "compiler" "(" "<" swift_version ")"
+                   | "canImport" "(" import_path ")"
+                   | "targetEnvironment" "(" environment ")" ;
 operating_system = "macOS" | "iOS" | "watchOS" | "tvOS" | "Linux" | "Windows" ;
 architecture = "i386" | "x86_64" | "arm" | "arm64" ;
 swift_version = decimal_digits [ swift_version_continuation ] ;

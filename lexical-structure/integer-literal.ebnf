@@ -1,9 +1,9 @@
 (* Grammar of an integer literal *)
 
-integer_literal = binary_literal ;
-integer_literal = octal_literal ;
-integer_literal = decimal_literal ;
-integer_literal = hexadecimal_literal ;
+integer_literal = binary_literal
+                | octal_literal
+                | decimal_literal
+                | hexadecimal_literal ;
 binary_literal = "0b" binary_digit [ binary_literal_characters ] ;
 binary_digit = "0" | "1" ;
 binary_literal_character = binary_digit | "_" ;

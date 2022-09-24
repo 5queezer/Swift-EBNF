@@ -5,9 +5,9 @@ protocol_name = identifier ;
 protocol_body = "{" [ protocol_members ] "}" ;
 protocol_members = protocol_member [ protocol_members ] ;
 protocol_member = protocol_member_declaration | compiler_control_statement ;
-protocol_member_declaration = protocol_property_declaration ;
-protocol_member_declaration = protocol_method_declaration ;
-protocol_member_declaration = protocol_initializer_declaration ;
-protocol_member_declaration = protocol_subscript_declaration ;
-protocol_member_declaration = protocol_associated_type_declaration ;
-protocol_member_declaration = typealias_declaration ;
+protocol_member_declaration = protocol_property_declaration
+                            | protocol_method_declaration
+                            | protocol_initializer_declaration
+                            | protocol_subscript_declaration
+                            | protocol_associated_type_declaration
+                            | typealias_declaration ;

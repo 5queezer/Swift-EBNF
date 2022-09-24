@@ -1,5 +1,5 @@
 (* Grammar of a loop statement *)
 
-loop_statement = for_in_statement ;
-loop_statement = while_statement ;
-loop_statement = repeat_while_statement ;
+loop_statement = for_in_statement
+               | while_statement
+               | repeat_while_statement ;

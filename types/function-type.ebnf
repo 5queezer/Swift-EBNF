@@ -1,8 +1,8 @@
 (* Grammar of a function type *)
 
 function_type = [ attributes ] function_type_argument_clause [ "async" ] [ "throws" ] "->" type ;
-function_type_argument_clause = "(" ")" ;
-function_type_argument_clause = "(" function_type_argument_list [ "..." ] ")" ;
+function_type_argument_clause = "(" ")"
+                              | "(" function_type_argument_list [ "..." ] ")" ;
 function_type_argument_list = function_type_argument | function_type_argument "," function_type_argument_list ;
 function_type_argument = [ attributes ] [ "inout" ] type | argument_label type_annotation ;
 argument_label = identifier ;

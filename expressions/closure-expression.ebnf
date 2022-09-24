@@ -1,16 +1,16 @@
 (* Grammar of a closure expression *)
 
 closure_expression = "{" [ attributes ] [ closure_signature ] [ statements ] "}" ;
-closure_signature = [ capture_list ] closure_parameter_clause [ "async" ] [ "throws" ] [ function_result ] "in" ;
-closure_signature = capture_list "in" ;
+closure_signature = [ capture_list ] closure_parameter_clause [ "async" ] [ "throws" ] [ function_result ] "in"
+                  | capture_list "in" ;
 closure_parameter_clause = "(" ")" | "(" closure_parameter_list ")" | identifier_list ;
 closure_parameter_list = closure_parameter | closure_parameter "," closure_parameter_list ;
-closure_parameter = closure_parameter_name [ type_annotation ] ;
-closure_parameter = closure_parameter_name type_annotation "..." ;
+closure_parameter = closure_parameter_name [ type_annotation ]
+                  | closure_parameter_name type_annotation "..." ;
 closure_parameter_name = identifier ;
 capture_list = "[" capture_list_items "]" ;
 capture_list_items = capture_list_item | capture_list_item "," capture_list_items ;
-capture_list_item = [ capture_specifier ] identifier ;
-capture_list_item = [ capture_specifier ] identifier "=" expression ;
-capture_list_item = [ capture_specifier ] self_expression ;
+capture_list_item = [ capture_specifier ] identifier
+                  | [ capture_specifier ] identifier "=" expression
+                  | [ capture_specifier ] self_expression ;
 capture_specifier = "weak" | "unowned" | "unowned(safe)" | "unowned(unsafe)" ;

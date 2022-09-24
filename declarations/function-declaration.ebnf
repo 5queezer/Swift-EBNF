@@ -3,15 +3,15 @@
 function_declaration = function_head function_name [ generic_parameter_clause ] function_signature [ generic_where_clause ] [ function_body ] ;
 function_head = [ attributes ] [ declaration_modifiers ] "func" ;
 function_name = identifier | operator ;
-function_signature = parameter_clause [ "async" ] [ "throws" ] [ function_result ] ;
-function_signature = parameter_clause [ "async" ] "rethrows" [ function_result ] ;
+function_signature = parameter_clause [ "async" ] [ "throws" ] [ function_result ]
+                   | parameter_clause [ "async" ] "rethrows" [ function_result ] ;
 function_result = "->" [ attributes ] type ;
 function_body = code_block ;
 parameter_clause = "(" ")" | "(" parameter_list ")" ;
 parameter_list = parameter | parameter "," parameter_list ;
-parameter = [ external_parameter_name ] local_parameter_name type_annotation [ default_argument_clause ] ;
-parameter = [ external_parameter_name ] local_parameter_name type_annotation ;
-parameter = [ external_parameter_name ] local_parameter_name type_annotation "..." ;
+parameter = [ external_parameter_name ] local_parameter_name type_annotation [ default_argument_clause ]
+          | [ external_parameter_name ] local_parameter_name type_annotation
+          | [ external_parameter_name ] local_parameter_name type_annotation "..." ;
 external_parameter_name = identifier ;
 local_parameter_name = identifier ;
 default_argument_clause = "=" expression ;

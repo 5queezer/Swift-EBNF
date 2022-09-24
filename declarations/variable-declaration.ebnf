@@ -1,24 +1,24 @@
 (* Grammar of a variable declaration *)
 
-variable_declaration = variable_declaration_head pattern_initializer_list ;
-variable_declaration = variable_declaration_head variable_name type_annotation code_block ;
-variable_declaration = variable_declaration_head variable_name type_annotation getter_setter_block ;
-variable_declaration = variable_declaration_head variable_name type_annotation getter_setter_keyword_block ;
-variable_declaration = variable_declaration_head variable_name initializer will_set_did_set_block ;
-variable_declaration = variable_declaration_head variable_name type_annotation [ initializer ] will_set_did_set_block ;
+variable_declaration = variable_declaration_head pattern_initializer_list
+                     | variable_declaration_head variable_name type_annotation code_block
+                     | variable_declaration_head variable_name type_annotation getter_setter_block
+                     | variable_declaration_head variable_name type_annotation getter_setter_keyword_block
+                     | variable_declaration_head variable_name initializer will_set_did_set_block
+                     | variable_declaration_head variable_name type_annotation [ initializer ] will_set_did_set_block ;
 variable_declaration_head = [ attributes ] [ declaration_modifiers ] "var" ;
 variable_name = identifier ;
-getter_setter_block = code_block ;
-getter_setter_block = "{" getter_clause [ setter_clause ] "}" ;
-getter_setter_block = "{" setter_clause getter_clause "}" ;
+getter_setter_block = code_block
+                    | "{" getter_clause [ setter_clause ] "}"
+                    | "{" setter_clause getter_clause "}" ;
 getter_clause = [ attributes ] [ mutation_modifier ] "get" code_block ;
 setter_clause = [ attributes ] [ mutation_modifier ] "set" [ setter_name ] code_block ;
 setter_name = "(" identifier ")" ;
-getter_setter_keyword_block = "{" getter_keyword_clause [ setter_keyword_clause ] "}" ;
-getter_setter_keyword_block = "{" setter_keyword_clause getter_keyword_clause "}" ;
+getter_setter_keyword_block = "{" getter_keyword_clause [ setter_keyword_clause ] "}"
+                            | "{" setter_keyword_clause getter_keyword_clause "}" ;
 getter_keyword_clause = [ attributes ] [ mutation_modifier ] "get" ;
 setter_keyword_clause = [ attributes ] [ mutation_modifier ] "set" ;
-will_set_did_set_block = "{" will_set_clause [ did_set_clause ] "}" ;
-will_set_did_set_block = "{" did_set_clause [ will_set_clause ] "}" ;
+will_set_did_set_block = "{" will_set_clause [ did_set_clause ] "}"
+                       | "{" did_set_clause [ will_set_clause ] "}" ;
 will_set_clause = [ attributes ] "willSet" [ setter_name ] code_block ;
 did_set_clause = [ attributes ] "didSet" [ setter_name ] code_block ;

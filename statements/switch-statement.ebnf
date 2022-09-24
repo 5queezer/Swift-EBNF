@@ -2,9 +2,9 @@
 
 switch_statement = "switch" expression "{" [ switch_cases ] "}" ;
 switch_cases = switch_case [ switch_cases ] ;
-switch_case = case_label statements ;
-switch_case = default_label statements ;
-switch_case = conditional_switch_case ;
+switch_case = case_label statements
+            | default_label statements
+            | conditional_switch_case ;
 case_label = [ attributes ] "case" case_item_list ":" ;
 case_item_list = pattern [ where_clause ] | pattern [ where_clause ] "," case_item_list ;
 default_label = [ attributes ] "default" ":" ;

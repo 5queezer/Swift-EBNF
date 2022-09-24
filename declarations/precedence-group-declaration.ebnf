@@ -2,14 +2,14 @@
 
 precedence_group_declaration = "precedencegroup" precedence_group_name "{" [ precedence_group_attributes ] "}" ;
 precedence_group_attributes = precedence_group_attribute [ precedence_group_attributes ] ;
-precedence_group_attribute = precedence_group_relation ;
-precedence_group_attribute = precedence_group_assignment ;
-precedence_group_attribute = precedence_group_associativity ;
-precedence_group_relation = "higherThan" ":" precedence_group_names ;
-precedence_group_relation = "lowerThan" ":" precedence_group_names ;
+precedence_group_attribute = precedence_group_relation
+                           | precedence_group_assignment
+                           | precedence_group_associativity ;
+precedence_group_relation = "higherThan" ":" precedence_group_names
+                          | "lowerThan" ":" precedence_group_names ;
 precedence_group_assignment = "assignment" ":" boolean_literal ;
-precedence_group_associativity = "associativity" ":" "left" ;
-precedence_group_associativity = "associativity" ":" "right" ;
-precedence_group_associativity = "associativity" ":" "none" ;
+precedence_group_associativity = "associativity" ":" "left"
+                               | "associativity" ":" "right"
+                               | "associativity" ":" "none" ;
 precedence_group_names = precedence_group_name | precedence_group_name "," precedence_group_names ;
 precedence_group_name = identifier ;
