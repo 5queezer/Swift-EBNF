@@ -1,0 +1,6 @@
+(* Grammar of a type-casting operator *)
+
+type_casting_operator = "is" type ;
+type_casting_operator = "as" type ;
+type_casting_operator = "as" "?" type ;
+type_casting_operator = "as" "!" type ;

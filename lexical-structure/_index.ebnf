@@ -1,0 +1,12 @@
+(* --------------------- *)
+(*   Lexical Structure   *)
+(* --------------------- *)
+
+#include :: "grammar-of-whitespace.ebnf"
+#include :: "identifier.ebnf"
+#include :: "literal.ebnf"
+#include :: "integer-literal.ebnf"
+#include :: "floating-point-literal.ebnf"
+#include :: "string-literal.ebnf"
+#include :: "regular-expression-literal.ebnf"
+#include :: "grammar-of-operators.ebnf"

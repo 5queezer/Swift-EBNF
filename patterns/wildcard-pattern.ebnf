@@ -1,0 +1,3 @@
+(* Grammar of a wildcard pattern *)
+
+wildcard_pattern = "_" ;

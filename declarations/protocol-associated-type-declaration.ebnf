@@ -1,0 +1,3 @@
+(* Grammar of a protocol associated type declaration *)
+
+protocol_associated_type_declaration = [ attributes ] [ access_level_modifier ] "associatedtype" typealias_name [ type_inheritance_clause ] [ typealias_assignment ] [ generic_where_clause ] ;

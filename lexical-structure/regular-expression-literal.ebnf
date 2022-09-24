@@ -1,0 +1,7 @@
+(* Grammar of a regular expression literal *)
+
+regular_expression_literal = regular_expression_literal_opening_delimiter regular_expression regular_expression_literal_closing_delimiter ;
+regular_expression = <Any regular expression> ;
+regular_expression_literal_opening_delimiter = [ extended_regular_expression_literal_delimiter ] "/" ;
+regular_expression_literal_closing_delimiter = "/" [ extended_regular_expression_literal_delimiter ] ;
+extended_regular_expression_literal_delimiter = "#" [ extended_regular_expression_literal_delimiter ] ;

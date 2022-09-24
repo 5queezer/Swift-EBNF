@@ -1,0 +1,7 @@
+(* Grammar of a control transfer statement *)
+
+control_transfer_statement = break_statement ;
+control_transfer_statement = continue_statement ;
+control_transfer_statement = fallthrough_statement ;
+control_transfer_statement = return_statement ;
+control_transfer_statement = throw_statement ;

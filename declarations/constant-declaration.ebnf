@@ -1,0 +1,6 @@
+(* Grammar of a constant declaration *)
+
+constant_declaration = [ attributes ] [ declaration_modifiers ] "let" pattern_initializer_list ;
+pattern_initializer_list = pattern_initializer | pattern_initializer "," pattern_initializer_list ;
+pattern_initializer = pattern [ initializer ] ;
+initializer = "=" expression ;

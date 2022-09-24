@@ -1,0 +1,15 @@
+(* Grammar of a literal expression *)
+
+literal_expression = literal ;
+literal_expression = array_literal | dictionary_literal | playground_literal ;
+literal_expression = "#file" | "#fileID" | "#filePath" ;
+literal_expression = "#line" | "#column" | "#function" | "#dsohandle" ;
+array_literal = "[" [ array_literal_items ] "]" ;
+array_literal_items = array_literal_item [ "," ] | array_literal_item "," array_literal_items ;
+array_literal_item = expression ;
+dictionary_literal = "[" dictionary_literal_items "]" | "[" ":" "]" ;
+dictionary_literal_items = dictionary_literal_item [ "," ] | dictionary_literal_item "," dictionary_literal_items ;
+dictionary_literal_item = expression ":" expression ;
+playground_literal = "#colorLiteral" "(" "red" ":" expression "," "green" ":" expression "," "blue" ":" expression "," "alpha" ":" expression ")" ;
+playground_literal = "#fileLiteral" "(" "resourceName" ":" expression ")" ;
+playground_literal = "#imageLiteral" "(" "resourceName" ":" expression ")" ;

@@ -1,0 +1,3 @@
+(* Grammar of a protocol method declaration *)
+
+protocol_method_declaration = function_head function_name [ generic_parameter_clause ] function_signature [ generic_where_clause ] ;

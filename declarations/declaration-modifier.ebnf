@@ -1,0 +1,14 @@
+(* Grammar of a declaration modifier *)
+
+declaration_modifier = "class" | "convenience" | "dynamic" | "final" | "infix" | "lazy" | "optional" | "override" | "postfix" | "prefix" | "required" | "static" | "unowned" | "unowned" "(" "safe" ")" | "unowned" "(" "unsafe" ")" | "weak" ;
+declaration_modifier = access_level_modifier ;
+declaration_modifier = mutation_modifier ;
+declaration_modifier = actor_isolation_modifier ;
+declaration_modifiers = declaration_modifier [ declaration_modifiers ] ;
+access_level_modifier = "private" | "private" "(" "set" ")" ;
+access_level_modifier = "fileprivate" | "fileprivate" "(" "set" ")" ;
+access_level_modifier = "internal" | "internal" "(" "set" ")" ;
+access_level_modifier = "public" | "public" "(" "set" ")" ;
+access_level_modifier = "open" | "open" "(" "set" ")" ;
+mutation_modifier = "mutating" | "nonmutating" ;
+actor_isolation_modifier = "nonisolated" ;

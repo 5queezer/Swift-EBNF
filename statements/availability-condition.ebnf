@@ -1,0 +1,15 @@
+(* Grammar of an availability condition *)
+
+availability_condition = "#available" "(" availability_arguments ")" ;
+availability_condition = "#unavailable" "(" availability_arguments ")" ;
+availability_arguments = availability_argument | availability_argument "," availability_arguments ;
+availability_argument = platform_name platform_version ;
+availability_argument = "*" ;
+platform_name = "iOS" | "iOSApplicationExtension" ;
+platform_name = "macOS" | "macOSApplicationExtension" ;
+platform_name = "macCatalyst" | "macCatalystApplicationExtension" ;
+platform_name = "watchOS" | "watchOSApplicationExtension" ;
+platform_name = "tvOS" | "tvOSApplicationExtension" ;
+platform_version = decimal_digits ;
+platform_version = decimal_digits "." decimal_digits ;
+platform_version = decimal_digits "." decimal_digits "." decimal_digits ;

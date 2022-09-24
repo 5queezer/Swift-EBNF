@@ -1,0 +1,5 @@
+(* Grammar of a type alias declaration *)
+
+typealias_declaration = [ attributes ] [ access_level_modifier ] "typealias" typealias_name [ generic_parameter_clause ] typealias_assignment ;
+typealias_name = identifier ;
+typealias_assignment = "=" type ;

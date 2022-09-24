@@ -1,0 +1,3 @@
+(* Grammar of an optional pattern *)
+
+optional_pattern = identifier_pattern "?" ;

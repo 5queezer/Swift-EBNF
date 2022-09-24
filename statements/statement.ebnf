@@ -1,0 +1,12 @@
+(* Grammar of a statement *)
+
+statement = expression [ ";" ] ;
+statement = declaration [ ";" ] ;
+statement = loop_statement [ ";" ] ;
+statement = branch_statement [ ";" ] ;
+statement = labeled_statement [ ";" ] ;
+statement = control_transfer_statement [ ";" ] ;
+statement = defer_statement [ ";" ] ;
+statement = do_statement [ ";" ] ;
+statement = compiler_control_statement ;
+statements = statement [ statements ] ;

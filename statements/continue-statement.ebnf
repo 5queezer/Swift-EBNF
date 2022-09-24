@@ -1,0 +1,3 @@
+(* Grammar of a continue statement *)
+
+continue_statement = "continue" [ label_name ] ;

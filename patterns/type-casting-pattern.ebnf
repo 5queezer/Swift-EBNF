@@ -1,0 +1,5 @@
+(* Grammar of a type casting pattern *)
+
+type_casting_pattern = is_pattern | as_pattern ;
+is_pattern = "is" type ;
+as_pattern = pattern "as" type ;

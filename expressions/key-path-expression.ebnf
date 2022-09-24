@@ -1,0 +1,7 @@
+(* Grammar of a key-path expression *)
+
+key_path_expression = "\" [ type ] "." key_path_components ;
+key_path_components = key_path_component | key_path_component "." key_path_components ;
+key_path_component = identifier [ key_path_postfixes ] | key_path_postfixes ;
+key_path_postfixes = key_path_postfix [ key_path_postfixes ] ;
+key_path_postfix = "?" | "!" | "self" | "[" function_call_argument_list "]" ;

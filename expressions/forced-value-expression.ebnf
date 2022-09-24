@@ -1,0 +1,3 @@
+(* Grammar of a forced-value expression *)
+
+forced_value_expression = postfix_expression "!" ;

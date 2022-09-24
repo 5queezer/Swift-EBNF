@@ -1,0 +1,3 @@
+(* Grammar of a code block *)
+
+code_block = "{" [ statements ] "}" ;

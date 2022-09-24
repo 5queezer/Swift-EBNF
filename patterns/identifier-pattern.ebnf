@@ -1,0 +1,3 @@
+(* Grammar of an identifier pattern *)
+
+identifier_pattern = identifier ;

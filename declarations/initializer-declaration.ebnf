@@ -1,0 +1,8 @@
+(* Grammar of an initializer declaration *)
+
+initializer_declaration = initializer_head [ generic_parameter_clause ] parameter_clause [ "async" ] [ "throws" ] [ generic_where_clause ] initializer_body ;
+initializer_declaration = initializer_head [ generic_parameter_clause ] parameter_clause [ "async" ] "rethrows" [ generic_where_clause ] initializer_body ;
+initializer_head = [ attributes ] [ declaration_modifiers ] "init" ;
+initializer_head = [ attributes ] [ declaration_modifiers ] "init" "?" ;
+initializer_head = [ attributes ] [ declaration_modifiers ] "init" "!" ;
+initializer_body = code_block ;

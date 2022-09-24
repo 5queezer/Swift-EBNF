@@ -1,0 +1,6 @@
+(* Grammar of a self expression *)
+
+self_expression = "self" | self_method_expression | self_subscript_expression | self_initializer_expression ;
+self_method_expression = "self" "." identifier ;
+self_subscript_expression = "self" "[" function_call_argument_list "]" ;
+self_initializer_expression = "self" "." "init" ;

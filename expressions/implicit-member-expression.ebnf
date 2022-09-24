@@ -1,0 +1,4 @@
+(* Grammar of a implicit member expression *)
+
+implicit_member_expression = "." identifier ;
+implicit_member_expression = "." identifier "." postfix_expression ;

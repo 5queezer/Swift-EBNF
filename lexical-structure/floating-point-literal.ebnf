@@ -1,0 +1,11 @@
+(* Grammar of a floating-point literal *)
+
+floating_point_literal = decimal_literal [ decimal_fraction ] [ decimal_exponent ] ;
+floating_point_literal = hexadecimal_literal [ hexadecimal_fraction ] hexadecimal_exponent ;
+decimal_fraction = "." decimal_literal ;
+decimal_exponent = floating_point_e [ sign ] decimal_literal ;
+hexadecimal_fraction = "." hexadecimal_digit [ hexadecimal_literal_characters ] ;
+hexadecimal_exponent = floating_point_p [ sign ] decimal_literal ;
+floating_point_e = "e" | "E" ;
+floating_point_p = "p" | "P" ;
+sign = "+" | "-" ;

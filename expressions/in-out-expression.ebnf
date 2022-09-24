@@ -1,0 +1,3 @@
+(* Grammar of an in-out expression *)
+
+in_out_expression = "&" identifier ;

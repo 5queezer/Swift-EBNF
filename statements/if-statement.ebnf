@@ -1,0 +1,4 @@
+(* Grammar of an if statement *)
+
+if_statement = "if" condition_list code_block [ else_clause ] ;
+else_clause = "else" code_block | "else" if_statement ;

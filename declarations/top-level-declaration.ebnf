@@ -1,0 +1,3 @@
+(* Grammar of a top-level declaration *)
+
+top_level_declaration = [ statements ] ;

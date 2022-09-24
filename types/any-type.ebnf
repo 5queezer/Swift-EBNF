@@ -1,0 +1,3 @@
+(* Grammar of an Any type *)
+
+any_type = "Any" ;

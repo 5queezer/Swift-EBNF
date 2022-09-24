@@ -1,0 +1,3 @@
+(* Grammar of a type annotation *)
+
+type_annotation = ":" [ attributes ] [ "inout" ] type ;

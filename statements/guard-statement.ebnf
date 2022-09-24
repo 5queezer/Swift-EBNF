@@ -1,0 +1,3 @@
+(* Grammar of a guard statement *)
+
+guard_statement = "guard" condition_list "else" code_block ;

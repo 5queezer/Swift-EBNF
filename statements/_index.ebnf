@@ -1,0 +1,27 @@
+(* -------------- *)
+(*   Statements   *)
+(* -------------- *)
+
+#include :: "statement.ebnf"
+#include :: "loop-statement.ebnf"
+#include :: "for-in-statement.ebnf"
+#include :: "while-statement.ebnf"
+#include :: "repeat-while-statement.ebnf"
+#include :: "branch-statement.ebnf"
+#include :: "if-statement.ebnf"
+#include :: "guard-statement.ebnf"
+#include :: "switch-statement.ebnf"
+#include :: "labeled-statement.ebnf"
+#include :: "control-transfer-statement.ebnf"
+#include :: "break-statement.ebnf"
+#include :: "continue-statement.ebnf"
+#include :: "fallthrough-statement.ebnf"
+#include :: "return-statement.ebnf"
+#include :: "throw-statement.ebnf"
+#include :: "defer-statement.ebnf"
+#include :: "do-statement.ebnf"
+#include :: "compiler-control-statement.ebnf"
+#include :: "conditional-compilation-block.ebnf"
+#include :: "line-control-statement.ebnf"
+#include :: "compile-time-diagnostic-statement.ebnf"
+#include :: "availability-condition.ebnf"

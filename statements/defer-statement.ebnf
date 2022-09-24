@@ -1,0 +1,3 @@
+(* Grammar of a defer statement *)
+
+defer_statement = "defer" code_block ;

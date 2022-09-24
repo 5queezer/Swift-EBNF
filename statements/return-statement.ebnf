@@ -1,0 +1,3 @@
+(* Grammar of a return statement *)
+
+return_statement = "return" [ expression ] ;

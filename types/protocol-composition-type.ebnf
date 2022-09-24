@@ -1,0 +1,4 @@
+(* Grammar of a protocol composition type *)
+
+protocol_composition_type = type_identifier "&" protocol_composition_continuation ;
+protocol_composition_continuation = type_identifier | protocol_composition_type ;

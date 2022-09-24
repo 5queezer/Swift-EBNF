@@ -1,0 +1,21 @@
+(* Grammar of whitespace *)
+
+whitespace = whitespace_item [ whitespace ] ;
+whitespace_item = line_break ;
+whitespace_item = inline_space ;
+whitespace_item = comment ;
+whitespace_item = multiline_comment ;
+whitespace_item = /\U00000000/ | /\U0000000B/ | /\U0000000C/ ;
+line_break = /\U0000000A/ ;
+line_break = /\U0000000D/ ;
+line_break = /\U0000000D/ /\U0000000A/ ;
+inline_spaces = inline_space [ inline_spaces ] ;
+inline_space = /\U00000009/ | /\U00000020/ ;
+comment = "//" comment_text line_break ;
+multiline_comment = "/*" multiline_comment_text "*/" ;
+comment_text = comment_text_item [ comment_text ] ;
+comment_text_item = ( /[\U00000000-\U0000D7FF]/ | /[\U0000E000-\U0010FFFF]/ ) ~ ( /\U0000000A/ | /\U0000000D/ ) ;
+multiline_comment_text = multiline_comment_text_item [ multiline_comment_text ] ;
+multiline_comment_text_item = multiline_comment ;
+multiline_comment_text_item = comment_text_item ;
+multiline_comment_text_item = <Any Unicode scalar value except> "/*" <or> "*/" ;

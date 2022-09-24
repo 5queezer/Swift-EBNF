@@ -1,0 +1,6 @@
+(* Grammar of an extension declaration *)
+
+extension_declaration = [ attributes ] [ access_level_modifier ] "extension" type_identifier [ type_inheritance_clause ] [ generic_where_clause ] extension_body ;
+extension_body = "{" [ extension_members ] "}" ;
+extension_members = extension_member [ extension_members ] ;
+extension_member = declaration | compiler_control_statement ;

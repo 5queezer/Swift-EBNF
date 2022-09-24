@@ -1,0 +1,6 @@
+(* Grammar of a superclass expression *)
+
+superclass_expression = superclass_method_expression | superclass_subscript_expression | superclass_initializer_expression ;
+superclass_method_expression = "super" "." identifier ;
+superclass_subscript_expression = "super" "[" function_call_argument_list "]" ;
+superclass_initializer_expression = "super" "." "init" ;

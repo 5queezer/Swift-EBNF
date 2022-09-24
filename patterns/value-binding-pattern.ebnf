@@ -1,0 +1,3 @@
+(* Grammar of a value-binding pattern *)
+
+value_binding_pattern = "var" pattern | "let" pattern ;

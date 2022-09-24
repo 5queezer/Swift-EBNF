@@ -1,0 +1,3 @@
+(* Grammar of an optional type *)
+
+optional_type = type "?" ;

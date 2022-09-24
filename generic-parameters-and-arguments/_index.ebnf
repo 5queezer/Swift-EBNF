@@ -1,0 +1,6 @@
+(* ------------------------------------ *)
+(*   Generic Parameters and Arguments   *)
+(* ------------------------------------ *)
+
+#include :: "generic-parameter-clause.ebnf"
+#include :: "generic-argument-clause.ebnf"

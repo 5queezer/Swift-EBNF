@@ -1,0 +1,7 @@
+(* Grammar of a while statement *)
+
+while_statement = "while" condition_list code_block ;
+condition_list = condition | condition "," condition_list ;
+condition = expression | availability_condition | case_condition | optional_binding_condition ;
+case_condition = "case" pattern initializer ;
+optional_binding_condition = "let" pattern [ initializer ] | "var" pattern [ initializer ] ;

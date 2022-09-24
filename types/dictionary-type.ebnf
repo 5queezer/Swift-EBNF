@@ -1,0 +1,3 @@
+(* Grammar of a dictionary type *)
+
+dictionary_type = "[" type ":" type "]" ;

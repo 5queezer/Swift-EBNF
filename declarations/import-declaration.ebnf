@@ -1,0 +1,5 @@
+(* Grammar of an import declaration *)
+
+import_declaration = [ attributes ] "import" [ import_kind ] import_path ;
+import_kind = "typealias" | "struct" | "class" | "enum" | "protocol" | "let" | "var" | "func" ;
+import_path = identifier | identifier "." import_path ;

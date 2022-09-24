@@ -1,0 +1,5 @@
+(* Grammar of a generic argument clause *)
+
+generic_argument_clause = "<" generic_argument_list ">" ;
+generic_argument_list = generic_argument | generic_argument "," generic_argument_list ;
+generic_argument = type ;

@@ -1,0 +1,8 @@
+(* Grammar of a labeled statement *)
+
+labeled_statement = statement_label loop_statement ;
+labeled_statement = statement_label if_statement ;
+labeled_statement = statement_label switch_statement ;
+labeled_statement = statement_label do_statement ;
+statement_label = label_name ":" ;
+label_name = identifier ;

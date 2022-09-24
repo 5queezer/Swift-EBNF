@@ -1,0 +1,5 @@
+(* Grammar of a compiler control statement *)
+
+compiler_control_statement = conditional_compilation_block ;
+compiler_control_statement = line_control_statement ;
+compiler_control_statement = diagnostic_statement ;

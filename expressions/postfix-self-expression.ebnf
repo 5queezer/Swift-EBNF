@@ -1,0 +1,3 @@
+(* Grammar of a postfix self expression *)
+
+postfix_self_expression = postfix_expression "." "self" ;

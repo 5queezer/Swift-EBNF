@@ -1,0 +1,4 @@
+(* Grammar of a protocol initializer declaration *)
+
+protocol_initializer_declaration = initializer_head [ generic_parameter_clause ] parameter_clause [ "throws" ] [ generic_where_clause ] ;
+protocol_initializer_declaration = initializer_head [ generic_parameter_clause ] parameter_clause "rethrows" [ generic_where_clause ] ;

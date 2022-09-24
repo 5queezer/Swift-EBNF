@@ -1,0 +1,3 @@
+(* Grammar of a parenthesized expression *)
+
+parenthesized_expression = "(" expression ")" ;

@@ -1,0 +1,23 @@
+(* Grammar of an integer literal *)
+
+integer_literal = binary_literal ;
+integer_literal = octal_literal ;
+integer_literal = decimal_literal ;
+integer_literal = hexadecimal_literal ;
+binary_literal = "0b" binary_digit [ binary_literal_characters ] ;
+binary_digit = "0" | "1" ;
+binary_literal_character = binary_digit | "_" ;
+binary_literal_characters = binary_literal_character [ binary_literal_characters ] ;
+octal_literal = "0o" octal_digit [ octal_literal_characters ] ;
+octal_digit = /[0-7]/ ;
+octal_literal_character = octal_digit | "_" ;
+octal_literal_characters = octal_literal_character [ octal_literal_characters ] ;
+decimal_literal = decimal_digit [ decimal_literal_characters ] ;
+decimal_digit = /[0-9]/ ;
+decimal_digits = decimal_digit [ decimal_digits ] ;
+decimal_literal_character = decimal_digit | "_" ;
+decimal_literal_characters = decimal_literal_character [ decimal_literal_characters ] ;
+hexadecimal_literal = "0x" hexadecimal_digit [ hexadecimal_literal_characters ] ;
+hexadecimal_digit = /[0-9]/ | /[a-f]/ | /[A-F]/ ;
+hexadecimal_literal_character = hexadecimal_digit | "_" ;
+hexadecimal_literal_characters = hexadecimal_literal_character [ hexadecimal_literal_characters ] ;

@@ -1,0 +1,7 @@
+(* Grammar of a subscript declaration *)
+
+subscript_declaration = subscript_head subscript_result [ generic_where_clause ] code_block ;
+subscript_declaration = subscript_head subscript_result [ generic_where_clause ] getter_setter_block ;
+subscript_declaration = subscript_head subscript_result [ generic_where_clause ] getter_setter_keyword_block ;
+subscript_head = [ attributes ] [ declaration_modifiers ] "subscript" [ generic_parameter_clause ] parameter_clause ;
+subscript_result = "->" [ attributes ] type ;

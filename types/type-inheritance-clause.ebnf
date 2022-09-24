@@ -1,0 +1,4 @@
+(* Grammar of a type inheritance clause *)
+
+type_inheritance_clause = ":" type_inheritance_list ;
+type_inheritance_list = [ attributes ] type_identifier | [ attributes ] type_identifier "," type_inheritance_list ;

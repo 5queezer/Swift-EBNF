@@ -1,0 +1,11 @@
+(* Grammar of a postfix expression *)
+
+postfix_expression = primary_expression ;
+postfix_expression = postfix_expression postfix_operator ;
+postfix_expression = function_call_expression ;
+postfix_expression = initializer_expression ;
+postfix_expression = explicit_member_expression ;
+postfix_expression = postfix_self_expression ;
+postfix_expression = subscript_expression ;
+postfix_expression = forced_value_expression ;
+postfix_expression = optional_chaining_expression ;

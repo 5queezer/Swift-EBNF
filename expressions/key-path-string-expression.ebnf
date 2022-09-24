@@ -1,0 +1,3 @@
+(* Grammar of a key-path string expression *)
+
+key_path_string_expression = "#keyPath" "(" expression ")" ;

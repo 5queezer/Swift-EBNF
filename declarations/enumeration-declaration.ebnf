@@ -1,0 +1,20 @@
+(* Grammar of an enumeration declaration *)
+
+enum_declaration = [ attributes ] [ access_level_modifier ] union_style_enum ;
+enum_declaration = [ attributes ] [ access_level_modifier ] raw_value_style_enum ;
+union_style_enum = [ "indirect" ] "enum" enum_name [ generic_parameter_clause ] [ type_inheritance_clause ] [ generic_where_clause ] "{" [ union_style_enum_members ] "}" ;
+union_style_enum_members = union_style_enum_member [ union_style_enum_members ] ;
+union_style_enum_member = declaration | union_style_enum_case_clause | compiler_control_statement ;
+union_style_enum_case_clause = [ attributes ] [ "indirect" ] "case" union_style_enum_case_list ;
+union_style_enum_case_list = union_style_enum_case | union_style_enum_case "," union_style_enum_case_list ;
+union_style_enum_case = enum_case_name [ tuple_type ] ;
+enum_name = identifier ;
+enum_case_name = identifier ;
+raw_value_style_enum = "enum" enum_name [ generic_parameter_clause ] type_inheritance_clause [ generic_where_clause ] "{" raw_value_style_enum_members "}" ;
+raw_value_style_enum_members = raw_value_style_enum_member [ raw_value_style_enum_members ] ;
+raw_value_style_enum_member = declaration | raw_value_style_enum_case_clause | compiler_control_statement ;
+raw_value_style_enum_case_clause = [ attributes ] "case" raw_value_style_enum_case_list ;
+raw_value_style_enum_case_list = raw_value_style_enum_case | raw_value_style_enum_case "," raw_value_style_enum_case_list ;
+raw_value_style_enum_case = enum_case_name [ raw_value_assignment ] ;
+raw_value_assignment = "=" raw_value_literal ;
+raw_value_literal = numeric_literal | static_string_literal | boolean_literal ;

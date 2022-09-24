@@ -1,0 +1,29 @@
+(* Grammar of a conditional compilation block *)
+
+conditional_compilation_block = if_directive_clause [ elseif_directive_clauses ] [ else_directive_clause ] endif_directive ;
+if_directive_clause = if_directive compilation_condition [ statements ] ;
+elseif_directive_clauses = elseif_directive_clause [ elseif_directive_clauses ] ;
+elseif_directive_clause = elseif_directive compilation_condition [ statements ] ;
+else_directive_clause = else_directive [ statements ] ;
+if_directive = "#if" ;
+elseif_directive = "#elseif" ;
+else_directive = "#else" ;
+endif_directive = "#endif" ;
+compilation_condition = platform_condition ;
+compilation_condition = identifier ;
+compilation_condition = boolean_literal ;
+compilation_condition = "(" compilation_condition ")" ;
+compilation_condition = "!" compilation_condition ;
+compilation_condition = compilation_condition "&&" compilation_condition ;
+compilation_condition = compilation_condition "||" compilation_condition ;
+platform_condition = "os" "(" operating_system ")" ;
+platform_condition = "arch" "(" architecture ")" ;
+platform_condition = "swift" "(" ">=" swift_version ")" | "swift" "(" "<" swift_version ")" ;
+platform_condition = "compiler" "(" ">=" swift_version ")" | "compiler" "(" "<" swift_version ")" ;
+platform_condition = "canImport" "(" import_path ")" ;
+platform_condition = "targetEnvironment" "(" environment ")" ;
+operating_system = "macOS" | "iOS" | "watchOS" | "tvOS" | "Linux" | "Windows" ;
+architecture = "i386" | "x86_64" | "arm" | "arm64" ;
+swift_version = decimal_digits [ swift_version_continuation ] ;
+swift_version_continuation = "." decimal_digits [ swift_version_continuation ] ;
+environment = "simulator" | "macCatalyst" ;

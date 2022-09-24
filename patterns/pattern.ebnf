@@ -1,0 +1,10 @@
+(* Grammar of a pattern *)
+
+pattern = wildcard_pattern [ type_annotation ] ;
+pattern = identifier_pattern [ type_annotation ] ;
+pattern = value_binding_pattern ;
+pattern = tuple_pattern [ type_annotation ] ;
+pattern = enum_case_pattern ;
+pattern = optional_pattern ;
+pattern = type_casting_pattern ;
+pattern = expression_pattern ;

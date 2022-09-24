@@ -1,0 +1,3 @@
+(* Grammar of an expression pattern *)
+
+expression_pattern = expression ;

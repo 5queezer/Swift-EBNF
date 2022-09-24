@@ -1,0 +1,19 @@
+(* --------- *)
+(*   Types   *)
+(* --------- *)
+
+#include :: "type.ebnf"
+#include :: "type-annotation.ebnf"
+#include :: "type-identifier.ebnf"
+#include :: "tuple-type.ebnf"
+#include :: "function-type.ebnf"
+#include :: "array-type.ebnf"
+#include :: "dictionary-type.ebnf"
+#include :: "optional-type.ebnf"
+#include :: "implicitly-unwrapped-optional-type.ebnf"
+#include :: "protocol-composition-type.ebnf"
+#include :: "opaque-type.ebnf"
+#include :: "metatype-type.ebnf"
+#include :: "any-type.ebnf"
+#include :: "self-type.ebnf"
+#include :: "type-inheritance-clause.ebnf"

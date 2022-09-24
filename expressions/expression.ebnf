@@ -1,0 +1,4 @@
+(* Grammar of an expression *)
+
+expression = [ try_operator ] [ await_operator ] prefix_expression [ infix_expressions ] ;
+expression_list = expression | expression "," expression_list ;

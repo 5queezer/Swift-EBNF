@@ -1,0 +1,4 @@
+(* Grammar of a type identifier *)
+
+type_identifier = type_name [ generic_argument_clause ] | type_name [ generic_argument_clause ] "." type_identifier ;
+type_name = identifier ;

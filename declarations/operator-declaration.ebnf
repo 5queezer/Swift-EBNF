@@ -1,0 +1,7 @@
+(* Grammar of an operator declaration *)
+
+operator_declaration = prefix_operator_declaration | postfix_operator_declaration | infix_operator_declaration ;
+prefix_operator_declaration = "prefix" "operator" operator ;
+postfix_operator_declaration = "postfix" "operator" operator ;
+infix_operator_declaration = "infix" "operator" operator [ infix_operator_group ] ;
+infix_operator_group = ":" precedence_group_name ;

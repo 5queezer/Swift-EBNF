@@ -1,0 +1,13 @@
+(* ------------ *)
+(*   Patterns   *)
+(* ------------ *)
+
+#include :: "pattern.ebnf"
+#include :: "wildcard-pattern.ebnf"
+#include :: "identifier-pattern.ebnf"
+#include :: "value-binding-pattern.ebnf"
+#include :: "tuple-pattern.ebnf"
+#include :: "enumeration-case-pattern.ebnf"
+#include :: "optional-pattern.ebnf"
+#include :: "type-casting-pattern.ebnf"
+#include :: "expression-pattern.ebnf"

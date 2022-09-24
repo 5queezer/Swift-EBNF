@@ -1,0 +1,17 @@
+(* Grammar of a switch statement *)
+
+switch_statement = "switch" expression "{" [ switch_cases ] "}" ;
+switch_cases = switch_case [ switch_cases ] ;
+switch_case = case_label statements ;
+switch_case = default_label statements ;
+switch_case = conditional_switch_case ;
+case_label = [ attributes ] "case" case_item_list ":" ;
+case_item_list = pattern [ where_clause ] | pattern [ where_clause ] "," case_item_list ;
+default_label = [ attributes ] "default" ":" ;
+where_clause = "where" where_expression ;
+where_expression = expression ;
+conditional_switch_case = switch_if_directive_clause [ switch_elseif_directive_clauses ] [ switch_else_directive_clause ] endif_directive ;
+switch_if_directive_clause = if_directive compilation_condition [ switch_cases ] ;
+switch_elseif_directive_clauses = elseif_directive_clause [ switch_elseif_directive_clauses ] ;
+switch_elseif_directive_clause = elseif_directive compilation_condition [ switch_cases ] ;
+switch_else_directive_clause = else_directive [ switch_cases ] ;

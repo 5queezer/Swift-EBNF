@@ -1,0 +1,6 @@
+(* Grammar of a tuple type *)
+
+tuple_type = "(" ")" | "(" tuple_type_element "," tuple_type_element_list ")" ;
+tuple_type_element_list = tuple_type_element | tuple_type_element "," tuple_type_element_list ;
+tuple_type_element = element_name type_annotation | type ;
+element_name = identifier ;

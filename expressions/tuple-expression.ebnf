@@ -1,0 +1,5 @@
+(* Grammar of a tuple expression *)
+
+tuple_expression = "(" ")" | "(" tuple_element "," tuple_element_list ")" ;
+tuple_element_list = tuple_element | tuple_element "," tuple_element_list ;
+tuple_element = expression | identifier ":" expression ;

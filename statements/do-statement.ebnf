@@ -1,0 +1,7 @@
+(* Grammar of a do statement *)
+
+do_statement = "do" code_block [ catch_clauses ] ;
+catch_clauses = catch_clause [ catch_clauses ] ;
+catch_clause = "catch" [ catch_pattern_list ] code_block ;
+catch_pattern_list = catch_pattern | catch_pattern "," catch_pattern_list ;
+catch_pattern = pattern [ where_clause ] ;

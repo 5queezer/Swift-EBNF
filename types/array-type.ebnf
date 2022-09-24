@@ -1,0 +1,3 @@
+(* Grammar of an array type *)
+
+array_type = "[" type "]" ;

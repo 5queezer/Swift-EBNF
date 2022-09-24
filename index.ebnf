@@ -1,0 +1,13 @@
+@@grammar :: Swift57
+@@comments :: /\(\*((?:.|\n)*?)\*\)/
+
+unicode_scalar_value = /[\U00000000-\U0000D7FF]/ | /[\U0000E000-\U0010FFFF]/ ;
+
+#include :: "lexical-structure/_index.ebnf"
+#include :: "types/_index.ebnf"
+#include :: "expressions/_index.ebnf"
+#include :: "statements/_index.ebnf"
+#include :: "declarations/_index.ebnf"
+#include :: "attributes/_index.ebnf"
+#include :: "patterns/_index.ebnf"
+#include :: "generic-parameters-and-arguments/_index.ebnf"

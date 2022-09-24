@@ -1,0 +1,7 @@
+(* Grammar of a structure declaration *)
+
+struct_declaration = [ attributes ] [ access_level_modifier ] "struct" struct_name [ generic_parameter_clause ] [ type_inheritance_clause ] [ generic_where_clause ] struct_body ;
+struct_name = identifier ;
+struct_body = "{" [ struct_members ] "}" ;
+struct_members = struct_member [ struct_members ] ;
+struct_member = declaration | compiler_control_statement ;

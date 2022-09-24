@@ -1,0 +1,3 @@
+(* Grammar of a protocol subscript declaration *)
+
+protocol_subscript_declaration = subscript_head subscript_result [ generic_where_clause ] getter_setter_keyword_block ;

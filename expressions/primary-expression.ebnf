@@ -1,0 +1,14 @@
+(* Grammar of a primary expression *)
+
+primary_expression = identifier [ generic_argument_clause ] ;
+primary_expression = literal_expression ;
+primary_expression = self_expression ;
+primary_expression = superclass_expression ;
+primary_expression = closure_expression ;
+primary_expression = parenthesized_expression ;
+primary_expression = tuple_expression ;
+primary_expression = implicit_member_expression ;
+primary_expression = wildcard_expression ;
+primary_expression = key_path_expression ;
+primary_expression = selector_expression ;
+primary_expression = key_path_string_expression ;

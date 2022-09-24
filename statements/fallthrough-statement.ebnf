@@ -1,0 +1,3 @@
+(* Grammar of a fallthrough statement *)
+
+fallthrough_statement = "fallthrough" ;

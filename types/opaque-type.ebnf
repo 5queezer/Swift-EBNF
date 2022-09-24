@@ -1,0 +1,3 @@
+(* Grammar of an opaque type *)
+
+opaque_type = "some" type ;

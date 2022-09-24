@@ -1,0 +1,7 @@
+(* Grammar of an actor declaration *)
+
+actor_declaration = [ attributes ] [ access_level_modifier ] "actor" actor_name [ generic_parameter_clause ] [ type_inheritance_clause ] [ generic_where_clause ] actor_body ;
+actor_name = identifier ;
+actor_body = "{" [ actor_members ] "}" ;
+actor_members = actor_member [ actor_members ] ;
+actor_member = declaration | compiler_control_statement ;

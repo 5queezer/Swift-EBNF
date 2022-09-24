@@ -1,0 +1,3 @@
+(* Grammar of an enumeration case pattern *)
+
+enum_case_pattern = [ type_identifier ] "." enum_case_name [ tuple_pattern ] ;

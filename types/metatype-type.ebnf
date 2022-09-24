@@ -1,0 +1,3 @@
+(* Grammar of a metatype type *)
+
+metatype_type = type "." "Type" | type "." "Protocol" ;

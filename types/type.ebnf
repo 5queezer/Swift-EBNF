@@ -1,0 +1,15 @@
+(* Grammar of a type *)
+
+type = function_type ;
+type = array_type ;
+type = dictionary_type ;
+type = type_identifier ;
+type = tuple_type ;
+type = optional_type ;
+type = implicitly_unwrapped_optional_type ;
+type = protocol_composition_type ;
+type = opaque_type ;
+type = metatype_type ;
+type = any_type ;
+type = self_type ;
+type = "(" type ")" ;

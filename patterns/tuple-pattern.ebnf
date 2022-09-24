@@ -1,0 +1,5 @@
+(* Grammar of a tuple pattern *)
+
+tuple_pattern = "(" [ tuple_pattern_element_list ] ")" ;
+tuple_pattern_element_list = tuple_pattern_element | tuple_pattern_element "," tuple_pattern_element_list ;
+tuple_pattern_element = pattern | identifier ":" pattern ;

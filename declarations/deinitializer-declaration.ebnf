@@ -1,0 +1,3 @@
+(* Grammar of a deinitializer declaration *)
+
+deinitializer_declaration = [ attributes ] "deinit" code_block ;
